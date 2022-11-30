@@ -74,3 +74,13 @@ prev.addEventListener("click", (e) => {
       currentSlide(index);
     }
 })
+
+// height for buttons "prev" and "next"
+
+let h = document.querySelector(".slide__img").offsetHeight;
+let hBtn = document.querySelector(".prev").offsetHeight;
+h = Number(h)/2;
+let next = document.querySelector(".next");
+next.style.top = h+"px";
+let previ = document.querySelector(".prev");
+previ.style.top = h+"px";
