@@ -31,17 +31,21 @@ a {
 }
 
 .slider__wrapper {
-    position: relative;
+    
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+
+.slider {
+  position: relative;
 }
 
 /* Галлерея---------------*/
 .prev, .next {
     cursor: pointer;
     position: absolute;
- 
+    top: calc(50% - 9px);
     width: auto;
     padding: 16px;
     margin-top: -22px;
