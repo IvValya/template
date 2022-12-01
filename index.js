@@ -75,6 +75,12 @@ prev.addEventListener("click", (e) => {
     }
 })
 
+let burger = document.querySelector(".burgerMenu");
+burger.addEventListener("click", () => {
+  document.querySelector(".mobileNav").style.display = "block";
+  burger.style.display = "none";
+})
+
 // height for buttons "prev" and "next"
 /*
 let h = document.querySelector(".slide__img").clientHeight;
