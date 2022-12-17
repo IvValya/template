@@ -5,7 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/styles/styles.css">
+    <link rel="stylesheet" href="assets/swiper/itc-slider.css">
     <title>Template</title>
+    <style>
+         .container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+      .itc-slider__item {
+      flex: 0 0 100%;
+      max-width: 100%;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 7rem;
+    }
+
+   .itc-slider__item {
+      background-color: #f44336;
+    }
+    </style>
 </head>
 <body class="wrapper">
     <header class="header">
@@ -105,7 +127,42 @@
                 </blockquote>                    
             </figure>
         </section>
-
+        <section>
+            <div class="container">
+                <div class="itc-slider" data-autoplay="true" data-interval="3000" data-loop="true" data-slider="itc-slider">
+                  <div class="itc-slider__wrapper">
+                    <div class="itc-slider__items">
+                      <div class="itc-slider__item">
+                        <img class="slide__img" src="assets/img/2artboard_3.jpg" alt="">
+                      </div>
+                      <div class="itc-slider__item">
+                        <a id = "modal" href="#modal">
+                            <img id="myImg1" class="slide__img" src="assets/img/1artboard_1.jpeg" alt="">
+                        </a>
+                      </div>
+                      <div class="itc-slider__item">
+                        <img class="slide__img" src="assets/img/3_1artboard_3.jpeg" alt="">
+                      </div>
+                      <div class="itc-slider__item">
+                        <img class="slide__img" src="assets/img/2artboard_3.jpg" alt="">
+                      </div>
+                      <div class="itc-slider__item">
+                        <img class="slide__img" src="assets/img/2artboard_3.jpg" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <button class="itc-slider__btn itc-slider__btn_prev"></button>
+                  <button class="itc-slider__btn itc-slider__btn_next"></button>
+                  <ol class="itc-slider__indicators">
+                    <li class="itc-slider__indicator" data-slide-to="0"></li>
+                    <li class="itc-slider__indicator" data-slide-to="1"></li>
+                    <li class="itc-slider__indicator" data-slide-to="2"></li>
+                    <li class="itc-slider__indicator" data-slide-to="3"></li>
+                    <li class="itc-slider__indicator" data-slide-to="4"></li>
+                  </ol>
+                </div>
+              </div>
+        </section>
     </main>
     <footer class="footer">
         <div class="footer__logo">
@@ -124,5 +181,6 @@
         </div>
     </footer>
     <script src="index.js"></script>
+    <script src="assets/swiper/itc-slider.js"></script>
 </body>
 </html>

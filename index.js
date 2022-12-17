@@ -6,24 +6,72 @@ let imgs = document.getElementsByClassName("slide");
 let modalImg = document.getElementById("img01");
 let captionText = document.getElementById("caption");
 
+addEventListener("hashchange",function(e){
+  //modal.style.display = "none";
+  let urlName = encodeURI(e.newURL).slice(-1);
+  console.log(urlName);
+  if (urlName != "#") {
+    console.log(urlName);
+    modal.style.display = "none";
+  }
+ // modal.style.display = "none";
+},false);
 
 for (let img of imgs) {
     img.addEventListener('click', (e) => {
         modal.style.display = "block";
         modalImg.src = e.currentTarget.querySelector("img").src;
         captionText.innerHTML = e.currentTarget.querySelector("img").alt;
+        console.log(encodeURI(document.location));
+        document.location = "#";
+       
     });
   }
 
+  document.addEventListener("DOMContentLoaded", function(e){
+    e.preventDefault();
+    let urlName = encodeURI(document.location).slice(-1);
+    if (urlName === "#") {
+      console.log(urlName);
+      console.log(modalImg.src);
+      modal.style.display = "block";
+    }
+  });
+
+  /*let imgSlider = document.getElementById("modal");
+  //for (let img of imgSlider) {
+    imgSlider.addEventListener('click', (e) => {
+        modal.style.display = "block";
+        modalImg.src = e.currentTarget.querySelector("img").src + "#";
+        captionText.innerHTML = e.currentTarget.querySelector("img").alt;
+        console.log(encodeURI(document.location));
+       // document.location = "#";
+       
+    });
+  //}
+*/
+/*
+let gallery = document.querySelector(".itc-slider__wrapper");
+gallery.addEventListener('click', (e) => {
+  modal.style.display = "block";
+  modalImg.src = e.currentTarget.querySelector("img").src + "#";
+  captionText.innerHTML = e.currentTarget.querySelector("img").alt;
+  console.log(encodeURI(document.location));
+  document.location = "#";
+ 
+});
+*/
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on <span> (x), close the modal
+
 span.onclick = function() { 
   modal.style.display = "none";
+  document.location = "";
 }
 
-// Галлерея
+// Галерея
 let slideIndex = 1;
 let divDots = document.querySelector(".dots");
 let slides = document.getElementsByClassName("slide");
@@ -78,6 +126,8 @@ prev.addEventListener("click", (e) => {
 let burger = document.querySelector(".burgerMenu");
 burger.addEventListener("click", () => {
   document.querySelector(".mobileNav").style.display = "block";
+  console.log(window.innerHeight);
+  document.querySelector(".mobileNav").style.minHeight = window.innerHeight+"px";
   burger.style.display = "none";
 })
 

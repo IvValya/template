@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <link
+      rel="stylesheet"
+      href="assets/swiper/swiper-bundle.min.css"
+    />
+    <link 
+      rel="stylesheet"
+      href="assets/gallery/gallery.css"
+      />
+
+    <!-- Demo styles -->
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper {
+        width: 100%;
+        height: auto;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+      }
+
+      .swiper .swiper-slide {
+        height: 300px;
+        line-height: 300px;
+      }
+
+      .swiper .swiper-slide:nth-child(2n) {
+        height: 500px;
+        line-height: 500px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="assets/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        autoHeight: true,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
+
+    <section>
+      <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content" id="img01">
+          </div>
+        <div id="caption"></div>
+    </div>
+    </section>
+
+    <script>
+      let imgs = document.getElementsByClassName("slide");
+      let modalImg = document.getElementById("img01");
+      let captionText = document.getElementById("caption");
+      let ims = document.querySelectorAll(".swiper-slide");
+      for (let img of imgs) {
+        img.addEventListener('click', (e) => {
+        modal.style.display = "block";
+        modalImg.src = e.currentTarget.querySelector("img").src + "#";
+        captionText.innerHTML = e.currentTarget.querySelector("img").alt;
+        console.log(encodeURI(document.location));
+        document.location = "#";
+       
+    });
+  }
+    </script>
+
+<!-------------Modal gallery-----------------------------
+
+<section>
+  <div class="gallery">
+    <a href="assets/img/1artboard_1.jpeg"" data-caption="Image caption">
+        <img class="slide__img" src="assets/img/1artboard_1.jpeg" alt="First image">
+    </a>
+    <a href="assets/img/2artboard_3.jpg">
+        <img class="slide__img" src="assets/img/2artboard_3.jpg" alt="Second image">
+    </a>
+    <a href="assets/img/3_1artboard_3.jpeg">
+      <img class="slide__img" src="assets/img/3_1artboard_3.jpeg" alt="Third image">
+  </a>
+</div>
+  <script src = "assets/gallery/gallery.js"></script>
+  <script> 
+  baguetteBox.run('.gallery');
+  </script>
+
+</section>
+
+-->
+
+
+  </body>
+</html>
